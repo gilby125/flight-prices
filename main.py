@@ -11,3 +11,7 @@ class SkyPickerApi(object):
         self.time = ''
 
 
+    @property
+    def url(self):
+        return '{}{}{}'.format(self.base, self.path, self.date)
+
