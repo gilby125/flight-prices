@@ -15,3 +15,14 @@ class SkyPickerApi(object):
     def url(self):
         return '{}{}{}'.format(self.base, self.path, self.date)
 
+
+    def fetch_data(self):
+        today = datetime.now()
+        self.time = today.strftime('%H:%M')
+        self.date = today.strftime('%m/%d/%Y')
+
+        headers = {'content-type': 'application/json'}
+        resp = requests.get(self.url, headers=headers)
+        return resp.json()
+
+
