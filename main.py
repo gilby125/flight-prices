@@ -26,3 +26,18 @@ class SkyPickerApi(object):
         return resp.json()
 
 
+    def save_lowest_price(self):
+        import csv
+
+        request = self.fetch_data()
+        date_time = '{} {}'.format(self.date, self.time)
+        price_brl = request['data'][0]['conversion']['BRL']
+        price_eur = request['data'][0]['conversion']['EUR']
+
+        writer = csv.writer(open('data.csv', 'a'), delimiter=',')
+        writer.writerow([date_time, price_brl, price_eur])
+
+        return True
+
+a = SkyPickerApi()
+print (a.save_lowest_price())
