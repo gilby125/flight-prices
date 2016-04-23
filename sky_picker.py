@@ -5,14 +5,15 @@ class SkyPickerApi(object):
     """docstring for SkyPickerApi"""
     def __init__(self):
         self.base = 'https://api.skypicker.com/'
-        self.path = 'flights?flyFrom=FOR&to=LIS&curr=BRL&'
+        self.path = 'flights?flyFrom=FOR&to=LIS&curr=BRL&dateFrom='
         self.date = ''
         self.time = ''
+        self.travel_date = '03/07/2016'
 
 
     @property
     def url(self):
-        return '{}{}{}'.format(self.base, self.path, self.date)
+        return '{}{}{}'.format(self.base, self.path, self.travel_date)
 
 
     def fetch_data(self):
@@ -37,3 +38,7 @@ class SkyPickerApi(object):
         writer.writerow([date_time, price_brl, price_eur])
 
         return True
+
+
+a = SkyPickerApi()
+a.save_lowest_price()
