@@ -38,7 +38,3 @@ class SkyPickerApi(object):
         writer.writerow([date_time, price_brl, price_eur])
 
         return True
-
-
-a = SkyPickerApi()
-a.save_lowest_price()
