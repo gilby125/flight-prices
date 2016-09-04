@@ -7,7 +7,7 @@ class SkyPickerApi(object):
 
 	def __init__(self):
 		self.base = 'https://api.skypicker.com/'
-		self.path = 'flights?flyFrom=FOR&to=LIS&curr=BRL&dateFrom='
+		self.path = 'flights?flyFrom=ORD&to=LIS&curr=BRL&dateFrom='
 		self.date = ''
 		self.time = ''
 		self.travel_date = '10/07/2016'
