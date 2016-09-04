@@ -8,7 +8,7 @@ class SkyPickerApi(object):
         self.path = 'flights?flyFrom=FOR&to=LIS&curr=BRL&dateFrom='
         self.date = ''
         self.time = ''
-        self.travel_date = '03/07/2016'
+        self.travel_date = '10/07/2016'
 
 
     @property
@@ -33,7 +33,7 @@ class SkyPickerApi(object):
         date_time = '{} {}'.format(self.date, self.time)
         price_brl = request['data'][0]['conversion']['BRL']
         price_eur = request['data'][0]['conversion']['EUR']
-
+        price_usd = request['data'][0]['conversion']['USD']
         writer = csv.writer(open('data.csv', 'a'), delimiter=',')
         writer.writerow([date_time, price_brl, price_eur])
 
