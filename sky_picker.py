@@ -32,7 +32,7 @@ class SkyPickerApi(object):
 		date_time = '{} {}'.format(self.date, self.time)
 		price_brl = request['data'][0]['conversion']['BRL']
 		price_eur = request['data'][0]['conversion']['EUR']
-		price_usd = request['data'][0]['conversion']['USD']
+		#price_usd = request['data'][0]['conversion']['USD']
 		writer = csv.writer(open('data.csv', 'a'), delimiter=',')
 		writer.writerow([date_time, price_brl, price_eur, price_usd])
 
