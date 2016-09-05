@@ -68,6 +68,6 @@ while dayCount < 27:
 				print(err)
 				pass
 
-			time.sleep(.15)
+			time.sleep(0)
 
 	dayCount += 1
