@@ -23,18 +23,6 @@ length = 7
 
 while dayCount < 27:
 
-	# endpoint = "https://api.test.sabre.com/v1"
-	# urlByService = "/auth/token?="
-	# url = endpoint + urlByService
-	# password = "v68npJKN"
-	# encodedUserInfo =  encodeBase64("V1:11dhmnwb72pizl3t:DEVCENTER:EXT")
-	# encodedPassword =  encodeBase64(password)
-	# encodedSecurityInfo = encodeBase64(encodedUserInfo + ":" + encodedPassword)
-	# data = {'grant_type':'client_credentials'}
-	# headers = {'content-type': 'application/x-www-form-urlencoded ','Authorization': 'Basic ' + encodedSecurityInfo}
-	# response = requests.post(url, headers=headers,data=data)
-	# access_token = response.json()
-	# token = 'Bearer ' + access_token[u'access_token']
 
 
 	for origin in origins:
