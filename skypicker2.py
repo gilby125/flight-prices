@@ -11,7 +11,6 @@ def encodeBase64(stringToEncode):
 	retorno = base64.b64encode(stringToEncode)
 	return retorno
 
-
 conn = pymongo.MongoClient('localhost', 27017)
 db = conn['skypicker']
 skypicker = db['results']
@@ -22,8 +21,6 @@ dayCount = 25
 length = 7
 
 while dayCount < 27:
-
-
 
 	for origin in origins:
 
@@ -45,8 +42,6 @@ while dayCount < 27:
 
 			print departured
 			print  returnd
-			# url = "https://api.test.sabre.com/v1/shop/flights?origin=" + origin + "&destination=" + dist + "&departuredate=" + departured + "&returndate=" + returnd + "&onlineitinerariesonly=N&limit=300&offset=1&eticketsonly=N&sortby=totalfare&order=asc&sortby2=departuretime&order2=asc&pointofsalecountry=US"
-			# url = "https://api.skypicker.com/flights?flyFrom=" + origin + "&to=" + dist + "&curr=USD&dateFrom=" + departured
 			url = "https://api.skypicker.com/flights?flyFrom=" + origin + "&to=" + dist + "&curr=USD&dateFrom=" + departured + "&dateTo=" + returnd
 			print url
 			try:
