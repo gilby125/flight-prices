@@ -52,9 +52,9 @@ while dayCount < 27:
 
 				data = json.load(response)
 
-				date_string = time.strftime("%Y-%m-%d")
+				# date_string = time.strftime("%Y-%m-%d")
 
-				filename = 'DataForThreeMonths/From= ' + origin + ' To= ' + dist + " Departure= " + departured + ' Collected= ' + date_string + '.json'
+				#filename = 'DataForThreeMonths/From= ' + origin + ' To= ' + dist + " Departure= " + departured + ' Collected= ' + date_string + '.json'
 
 				# with open(filename,'w') as outfile:
 				#    json.dump(data, outfile)
