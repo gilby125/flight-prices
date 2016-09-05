@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+*.ini
 .Python
 env/
 build/
@@ -60,3 +61,12 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+.idea/.name
+.idea/dbnavigator.xml
+.idea/encodings.xml
+.idea/flight-prices.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+DataForThreeMonths/
+sabre_original.py
