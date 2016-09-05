@@ -11,8 +11,10 @@ def encodeBase64(stringToEncode):
 	retorno = base64.b64encode(stringToEncode)
 	return retorno
 
-conn = pymongo.MongoClient('localhost', 27017)
-db = conn['skypicker']
+
+conn = pymongo.MongoClient('', 19816)
+conn.heroku_zhp88dgv.authenticate('skypicker', '')
+db = conn['heroku_zhp88dgv']
 skypicker = db['results']
 
 origins = [u'ORD', u'JFK']
@@ -26,11 +28,11 @@ while dayCount < 27:
 
 		if origin == 'ORD':
 
-			destinations = ['AAQ', 'AER', 'AMS']
+			destinations = ['BKK', 'SIN', 'AMS', 'BRU', "LHR"]
 
 		elif origin == 'JFK':
 
-			destinations = ['AAQ', 'AER', 'AMS']
+			destinations = ['FCO', 'BRU', 'AMS']
 
 		for dist in destinations:
 
