@@ -17,9 +17,6 @@ from sqlalchemy import create_engine, MetaData
 #   return compiler.visit_insert(insert, **kw) + "ON CONFLICT DO NOTHING"
 
 
-
-
-
 engine = create_engine(conn_str, client_encoding='utf8')
 
 # meta = MetaData()
@@ -31,13 +28,10 @@ meta.reflect(bind=engine)
 #users_table = meta.tables['fares']
 addresses_table = meta.tables['routes']
 
-
 # cur.execute("""SELECT datname from pg_database""")
 def encodeBase64(stringToEncode):
 	retorno = base64.b64encode(stringToEncode)
 	return retorno
-
-
 
 origins = [u'ORD', u'PDX', u'IAH', u'MSP', u'DEN', u'PHX', u'LAX', u'SFO', u'SEA', u'ATL', u'DTW', u'CVG', u'NYC',
            u'WAS', u'CLT', u'ATL', u'MIA', u'FLL', u'YYZ', u'YTO', u'YVR', u'MSP', u'FLL', u'MSP', u'BOS']
