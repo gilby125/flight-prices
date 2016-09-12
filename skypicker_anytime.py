@@ -5,23 +5,7 @@ from datetime import datetime, timedelta
 
 from sqlalchemy import create_engine, MetaData
 
-# from sqlalchemy.ext.compiler import compiles
-# from sqlalchemy.sql.expression import Insert
-# import requests
-
-# conn_str = 'postgresql://qclytyrymxarqi:z9Yvdyd6zh3zrfPzcLu5gL2QZc@ec2-54-225-72-148.compute-1.amazonaws.com:5432/d3ttmlgp2n3bj'
-
-
-# @compiles(Insert)
-#def prefix_inserts(insert, compiler, **kw):
-#   return compiler.visit_insert(insert, **kw) + "ON CONFLICT DO NOTHING"
-
-
 engine = create_engine(conn_str, client_encoding='utf8')
-
-# meta = MetaData()
-# meta2 = MetaData()
-#meta.reflect(engine, only=['fares','routes'])
 
 meta = MetaData()
 meta.reflect(bind=engine)
@@ -86,13 +70,7 @@ while dayCount < 27:
 				data_skypicker = json.load(response_skypicker)
 				data_skypicker_2 = data_skypicker['data']
 				data_skypicker_3 = data_skypicker_2[0]['route']
-				# data_sabre = json.load(response_sabre)
-				# date_string = time.strftime("%Y-%m-%d")
 
-
-				# filename = 'DataForThreeMonths/From= ' + origin + ' To= ' + dist + '.json'
-				# with open(filename, 'w') as outfile:
-				# json.dump(data_sabre, outfile)
 
 				for row in data_skypicker_3: engine.execute(meta.tables['routes'].insert().values(
 					route_atimeutc=row['aTimeUTC'], route_mapidfrom=row['mapIdfrom'], route_mapidto=row['mapIdto'],
