@@ -9,26 +9,26 @@ from sqlalchemy import create_engine, MetaData
 # from sqlalchemy.sql.expression import Insert
 # import requests
 
-
+# conn_str = 'postgresql://qclytyrymxarqi:z9Yvdyd6zh3zrfPzcLu5gL2QZc@ec2-54-225-72-148.compute-1.amazonaws.com:5432/d3ttmlgp2n3bj'
 
 
 # @compiles(Insert)
-# def prefix_inserts(insert, compiler, **kw):
+#def prefix_inserts(insert, compiler, **kw):
 #   return compiler.visit_insert(insert, **kw) + "ON CONFLICT DO NOTHING"
 
 
 
-conn_str = 'postgresql://gilby:Lokifish123@192.168.32.133:5432/api_results_dev'
+
 
 engine = create_engine(conn_str, client_encoding='utf8')
 
 # meta = MetaData()
 # meta2 = MetaData()
-# meta.reflect(engine, only=['fares','routes'])
+#meta.reflect(engine, only=['fares','routes'])
 
 meta = MetaData()
 meta.reflect(bind=engine)
-# users_table = meta.tables['fares']
+#users_table = meta.tables['fares']
 addresses_table = meta.tables['routes']
 
 
@@ -36,6 +36,7 @@ addresses_table = meta.tables['routes']
 def encodeBase64(stringToEncode):
 	retorno = base64.b64encode(stringToEncode)
 	return retorno
+
 
 
 origins = [u'ORD', u'PDX', u'IAH', u'MSP', u'DEN', u'PHX', u'LAX', u'SFO', u'SEA', u'ATL', u'DTW', u'CVG', u'NYC',
@@ -81,6 +82,8 @@ while dayCount < 27:
 			                "&sortBy=price" + "&partner=picky" + "&limit=" + str(limit_int)
 
 			print url_skypicker
+
+
 
 			try:
 				req_skypicker = urllib2.Request(url_skypicker)
@@ -129,6 +132,6 @@ while dayCount < 27:
 
 				pass
 
-			# time.sleep(0.3)
+			#time.sleep(0.3)
 
 	dayCount += 1
