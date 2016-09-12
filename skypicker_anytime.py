@@ -77,8 +77,6 @@ while dayCount < 27:
 
 			print url_skypicker
 
-
-
 			try:
 				req_skypicker = urllib2.Request(url_skypicker)
 				# req_sabre = urllib2.Request(url_sabre, headers={'Authorization': token})
